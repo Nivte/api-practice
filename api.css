@@ -1,32 +1,25 @@
+
+
+
 .jokeArea {
   height: 30vh;
-  width: 40vw;
+  width: 50vw;
   border: black solid;
   position: absolute;
   top: 60vh;
-  left: 30vw;
+  left: 25vw;
   overflow: scroll;
 }
 
 .jokeQ {
   position: relative;
+  left: 7vw;
   top: 3vh;
-  left: 2vw;
+  text-align: center;
+  font-size: 3vh;
+
+
   width: 35vw;
   color: blue;
 }
 
-.jokeAnswer {
-  position: relative;
-  top: 7vh;
-  left: 2vw;
-  width: 35vw;
-}
-
-.justJoke {
-  position: relative;
-  top: 7vh;
-  left: 2vw;
-  width: 35vw;
-  color: green;
-}

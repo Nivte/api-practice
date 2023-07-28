@@ -87,8 +87,14 @@ function handleJokes() {
       .then((bodyAsObject) =>
         console.dir(
           ($jokeQ.innerHTML = bodyAsObject.setup
-            ? bodyAsObject.setup + "<br><br>" + bodyAsObject.delivery
-            : bodyAsObject.joke? "<br></br>" + bodyAsObject.joke:"")
+            ? "Q:   " +
+              bodyAsObject.setup +
+              "<br><br>" +
+              "A:   " +
+              bodyAsObject.delivery
+            : bodyAsObject.joke
+            ? "<br>" + bodyAsObject.joke
+            : "")
         )
       );
   });
