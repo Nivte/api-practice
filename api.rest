@@ -1,0 +1,2 @@
+
+GET  https://v2.jokeapi.dev/categories
