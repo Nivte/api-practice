@@ -26,7 +26,7 @@ function handleCategories() {
 
 handleCategories();
 
-console.log(localStorage.getItem("categories"));
+// console.log(localStorage.getItem("categories"));
 
 let stringCategories = localStorage.getItem("categories");
 
@@ -34,7 +34,6 @@ let categoriesArr = stringCategories.split(",").map((u) => {
   return u.trim();
 });
 
-console.log(categoriesArr);
 let i = 0;
 for (let category of categoriesArr) {
   $selectBar.innerHTML += ` <option onchange="getJokeByCategory()" id="i" value="${category}">${category}</option>`;
@@ -43,16 +42,6 @@ for (let category of categoriesArr) {
 }
 
 console.log($selectBar);
-// categoriesInf.push (localStorage.getItem("categories"))
-
-// console.log (categoriesInf)
-
-// let jokes = fetch("https://v2.jokeapi.dev/categories").then((response) => {
-//   response
-//     .json()
-
-//     .then((bodyAsObject) => console.log(bodyAsObject.categories));
-// });
 
 /////////////////////////////////////////////////////////
 // joke box- their jokes match
@@ -64,7 +53,7 @@ let chosenCategory = "";
 
 async function getJokeByCategory() {
   let chosenCategory = $selectBar.value;
-  console.log(chosenCategory);
+//   console.log(chosenCategory);
 
   await fetch(` https://v2.jokeapi.dev/joke/${chosenCategory}`);
 
@@ -85,7 +74,7 @@ function handleJokes() {
     response
       .json()
       .then((bodyAsObject) =>
-        console.dir(
+        
           ($jokeQ.innerHTML = bodyAsObject.setup
             ? "Q:   " +
               bodyAsObject.setup +
@@ -96,73 +85,6 @@ function handleJokes() {
             ? "<br>" + bodyAsObject.joke
             : "")
         )
-      );
+      ;
   });
-
-  //   let delivery = getJokeByCategory().then((response) => {
-  //     response
-  //       .json()
-  //       .then(
-  //         (bodyAsObject) =>
-  //         console.log (
-  //           ($jokeAnswer.innerHTML = bodyAsObject.delivery
-  //             ? bodyAsObject.delivery
-  //             : ""))
-  //       );
-  //   });
-
-  //   let justJoke = getJokeByCategory().then((response) => {
-  //     response
-  //       .json()
-  //       .then(
-  //         (bodyAsObject) => console.log (
-  //           ($justJoke.innerHTML = bodyAsObject.joke ? bodyAsObject.joke : ""))
-  //       );
-  //   });
 }
-
-//   let joke = getJokeByCategory().then((response) => {
-//     response
-//       .json()
-//       .then(
-//         (bodyAsObject) =>
-//           ($jokeQ.innerHTML = bodyAsObject.joke
-//             ? bodyAsObject.delivery
-//             : "")
-//       );
-//   });
-
-//   let bbb = getJokeByCategory().then((response) => {
-//     response.json().then((bodyAsObject) => console.log(bodyAsObject));
-//   });
-
-// function handleCategories() {
-//     let aaa = getCategories().then((response) => {
-//       response
-//         .json()
-
-//         .then((bodyAsObject) =>
-//           localStorage.setItem("categories", bodyAsObject.categories)
-//         );
-//     });
-//   }
-
-//   handleCategories();
-
-//   console.log(localStorage.getItem("categories"));
-
-//   let stringCategories = localStorage.getItem("categories");
-
-//   let categoriesArr = stringCategories.split(",").map((u) => {
-//     return u.trim();
-//   });
-
-//   console.log(categoriesArr);
-//   let i = 0;
-//   for (let category of categoriesArr) {
-//     $selectBar.innerHTML += ` <option onchange="getJokeByCategory()" id="i" value="${category}">${category}</option>`;
-
-//     i++;
-//   }
-
-//   console.log($selectBar);
