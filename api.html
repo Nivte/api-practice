@@ -21,20 +21,23 @@
 
     <link rel="stylesheet" href="./api.css" />
     <script defer src="./api.js"></script>
-    <script defer src="./redner.js"></script>
+
   </head>
   <body>
+   <p class="back"></p>
+
     <div id="test"></div>
 
-    <h2 class="row justify-content-center mt-5">Jokes Api</h2>
+    <h1 class="position-absolute top-0 start-50 translate-middle-x mt-5 z-3">Jokes Api</h1>
+  
     <br /><br /><br />
-
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-4">
+ 
+    <div class="container position-absolute start-50 translate-middle-x mt-5 z-3">
+      <div class="row justify-content-center z-3">
+        <div class=" col-4 z-3">
           <select
             id="selectBar"
-            class="form-select"
+            class="slider form-select"
             aria-label="Default select example"
           >
             <option selected>Choose Joke Category</option>
@@ -42,6 +45,8 @@
         </div>
       </div>
     </div>
+    <img class="laughing" src="laughing.jpeg" alt="">
+    <img class="laughing2" src="lauging2.jpeg" alt="">
 
     <br />
     <br />
