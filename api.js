@@ -53,7 +53,7 @@ let chosenCategory = "";
 
 async function getJokeByCategory() {
   let chosenCategory = $selectBar.value;
-//   console.log(chosenCategory);
+  //   console.log(chosenCategory);
 
   await fetch(` https://v2.jokeapi.dev/joke/${chosenCategory}`);
 
@@ -73,8 +73,8 @@ function handleJokes() {
   let setup = getJokeByCategory().then((response) => {
     response
       .json()
-      .then((bodyAsObject) =>
-        
+      .then(
+        (bodyAsObject) =>
           ($jokeQ.innerHTML = bodyAsObject.setup
             ? "Q:   " +
               bodyAsObject.setup +
@@ -84,7 +84,6 @@ function handleJokes() {
             : bodyAsObject.joke
             ? "<br>" + bodyAsObject.joke
             : "")
-        )
-      ;
+      );
   });
 }
